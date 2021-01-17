@@ -50,6 +50,7 @@ EOF
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
 echo "Sync'ing files with S3 Bucket '${AWS_S3_BUCKET}':"
+echo "'${AWS_ACCESS_KEY_ID}': '${AWS_SECRET_ACCESS_KEY}'"
 sh -c "aws s3 sync ${SOURCE_DIR:-.} s3://${AWS_S3_BUCKET}/ \
               --profile s3-sync-action \
               --no-progress \
